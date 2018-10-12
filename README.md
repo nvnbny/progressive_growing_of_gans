@@ -17,6 +17,7 @@ This is a PyTorch implementation of the paper [PROGRESSIVE GROWING OF GANS FOR I
 
 ### Samples
 * Below are some of the samples generated from this implementation. For each resolution, the people on the left column do not exist, ones on the right are from the celeba dataset
+
 **Resolutions**
 #### | ----- 4 x 4 ------ | ----- 8 x 8 ------ | ---- 16 x 16 ----- | ---- 32 x 32 ---- | ---- 64 x 64 ---- | --- 128 x 128 --- | --- 256 x 256 --- |
 <p align="center">
