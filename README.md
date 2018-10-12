@@ -2,7 +2,7 @@
 This is a PyTorch implementation of the paper [PROGRESSIVE GROWING OF GANS FOR IMPROVED QUALITY, STABILITY, AND VARIATION by Karras et al.](https://arxiv.org/abs/1710.10196) 
 
 ### Contributions by Authors
-* **Progressive Growing:** The primary contribution of the paper is a training methodology for GANs starting with low-resolution images, and then progressively increasing the resolution by adding layers to the networks as shown above
+* **Progressive Growing:** The primary contribution of the paper is a training methodology for GANs starting with low-resolution images, and then progressively increasing the resolution by adding layers to the networks as shown below
 
 <p align="center">
   <img src="/samples/figure.png">
@@ -16,7 +16,7 @@ This is a PyTorch implementation of the paper [PROGRESSIVE GROWING OF GANS FOR I
 ### Implementation
 * Below are some of the samples generated from this implementation. The people on the left column do not exist, ones on the right are from the celeb dataset
 #### Resolutions ->
-#### | ----- 4 x 4 ------ | ----- 8 x 8 ------ | ---- 16 x 16 ---- | ---- 32 x 32 ---- | ---- 64 x 64 ---- | --- 128 x 128 --- | --- 256 x 256 --- |
+#### | ----- 4 x 4 ------ | ----- 8 x 8 ------ | ---- 16 x 16 ----- | ---- 32 x 32 ----- | ---- 64 x 64 ----- | --- 128 x 128 --- | --- 256 x 256 --- |
 <p align="center">
   <img src="/samples/compiled.png">
 </p>
