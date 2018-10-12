@@ -1,5 +1,5 @@
 # PGGAN PyTorch - by **Naveen Benny**
-This is a PyTorch implementation of the paper [PROGRESSIVE GROWING OF GANS FOR IMPROVED QUALITY, STABILITY, AND VARIATION by Karras et al.](https://arxiv.org/abs/1710.10196) 
+This is a PyTorch implementation of the paper [Progressive Growing Of GANS For Improved Quality, Stability, And Variation by Karras et al.](https://arxiv.org/abs/1710.10196) 
 
 ## Novel Contributions from this Paper
 * **Progressive Growing:** The primary contribution of the paper is a training methodology for GANs starting with low-resolution images, and then progressively increasing the resolution by adding layers to the networks as shown below
