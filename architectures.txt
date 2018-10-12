@@ -1,0 +1,180 @@
+Discriminator(
+  (net): ProcessDiscLevel(
+    (pre): ModuleList(
+      (0): Sequential(
+        (0): WSConv2d(inp = Conv2d[64, 3, 1, 1])
+        (1): LeakyReLU(negative_slope=0.2)
+      )
+      (1): Sequential(
+        (0): WSConv2d(inp = Conv2d[128, 3, 1, 1])
+        (1): LeakyReLU(negative_slope=0.2)
+      )
+      (2): Sequential(
+        (0): WSConv2d(inp = Conv2d[256, 3, 1, 1])
+        (1): LeakyReLU(negative_slope=0.2)
+      )
+      (3): Sequential(
+        (0): WSConv2d(inp = Conv2d[512, 3, 1, 1])
+        (1): LeakyReLU(negative_slope=0.2)
+      )
+      (4): Sequential(
+        (0): WSConv2d(inp = Conv2d[512, 3, 1, 1])
+        (1): LeakyReLU(negative_slope=0.2)
+      )
+      (5): Sequential(
+        (0): WSConv2d(inp = Conv2d[512, 3, 1, 1])
+        (1): LeakyReLU(negative_slope=0.2)
+      )
+      (6): Sequential(
+        (0): WSConv2d(inp = Conv2d[512, 3, 1, 1])
+        (1): LeakyReLU(negative_slope=0.2)
+      )
+    )
+    (chain): ModuleList(
+      (0): Sequential(
+        (0): WSConv2d(inp = Conv2d[64, 64, 3, 3])
+        (1): LeakyReLU(negative_slope=0.2)
+        (2): WSConv2d(inp = Conv2d[128, 64, 3, 3])
+        (3): LeakyReLU(negative_slope=0.2)
+        (4): AvgPool2d(kernel_size=2, stride=2, padding=0)
+      )
+      (1): Sequential(
+        (0): WSConv2d(inp = Conv2d[128, 128, 3, 3])
+        (1): LeakyReLU(negative_slope=0.2)
+        (2): WSConv2d(inp = Conv2d[256, 128, 3, 3])
+        (3): LeakyReLU(negative_slope=0.2)
+        (4): AvgPool2d(kernel_size=2, stride=2, padding=0)
+      )
+      (2): Sequential(
+        (0): WSConv2d(inp = Conv2d[256, 256, 3, 3])
+        (1): LeakyReLU(negative_slope=0.2)
+        (2): WSConv2d(inp = Conv2d[512, 256, 3, 3])
+        (3): LeakyReLU(negative_slope=0.2)
+        (4): AvgPool2d(kernel_size=2, stride=2, padding=0)
+      )
+      (3): Sequential(
+        (0): WSConv2d(inp = Conv2d[512, 512, 3, 3])
+        (1): LeakyReLU(negative_slope=0.2)
+        (2): WSConv2d(inp = Conv2d[512, 512, 3, 3])
+        (3): LeakyReLU(negative_slope=0.2)
+        (4): AvgPool2d(kernel_size=2, stride=2, padding=0)
+      )
+      (4): Sequential(
+        (0): WSConv2d(inp = Conv2d[512, 512, 3, 3])
+        (1): LeakyReLU(negative_slope=0.2)
+        (2): WSConv2d(inp = Conv2d[512, 512, 3, 3])
+        (3): LeakyReLU(negative_slope=0.2)
+        (4): AvgPool2d(kernel_size=2, stride=2, padding=0)
+      )
+      (5): Sequential(
+        (0): WSConv2d(inp = Conv2d[512, 512, 3, 3])
+        (1): LeakyReLU(negative_slope=0.2)
+        (2): WSConv2d(inp = Conv2d[512, 512, 3, 3])
+        (3): LeakyReLU(negative_slope=0.2)
+        (4): AvgPool2d(kernel_size=2, stride=2, padding=0)
+      )
+      (6): Sequential(
+        (0): BatchStdConcat(Group Size = 4)
+        (1): WSConv2d(inp = Conv2d[512, 513, 3, 3])
+        (2): LeakyReLU(negative_slope=0.2)
+        (3): WSConv2d(inp = Conv2d[512, 512, 4, 4])
+        (4): LeakyReLU(negative_slope=0.2)
+        (5): WSConv2d(inp = Conv2d[1, 512, 1, 1])
+      )
+    )
+  )
+)
+
+Generator(
+  (net): ProcessGenLevel(
+    (chain): ModuleList(
+      (0): Sequential(
+        (0): ReshapeLayer()
+        (1): WSConv2d(inp = Conv2d[512, 512, 4, 4])
+        (2): LeakyReLU(negative_slope=0.2)
+        (3): PixelNormalization(eps = 1e-08)
+        (4): WSConv2d(inp = Conv2d[512, 512, 3, 3])
+        (5): LeakyReLU(negative_slope=0.2)
+        (6): PixelNormalization(eps = 1e-08)
+      )
+      (1): Sequential(
+        (0): Upsample(scale_factor=2, mode=nearest)
+        (1): WSConv2d(inp = Conv2d[512, 512, 3, 3])
+        (2): LeakyReLU(negative_slope=0.2)
+        (3): PixelNormalization(eps = 1e-08)
+        (4): WSConv2d(inp = Conv2d[512, 512, 3, 3])
+        (5): LeakyReLU(negative_slope=0.2)
+        (6): PixelNormalization(eps = 1e-08)
+      )
+      (2): Sequential(
+        (0): Upsample(scale_factor=2, mode=nearest)
+        (1): WSConv2d(inp = Conv2d[512, 512, 3, 3])
+        (2): LeakyReLU(negative_slope=0.2)
+        (3): PixelNormalization(eps = 1e-08)
+        (4): WSConv2d(inp = Conv2d[512, 512, 3, 3])
+        (5): LeakyReLU(negative_slope=0.2)
+        (6): PixelNormalization(eps = 1e-08)
+      )
+      (3): Sequential(
+        (0): Upsample(scale_factor=2, mode=nearest)
+        (1): WSConv2d(inp = Conv2d[512, 512, 3, 3])
+        (2): LeakyReLU(negative_slope=0.2)
+        (3): PixelNormalization(eps = 1e-08)
+        (4): WSConv2d(inp = Conv2d[512, 512, 3, 3])
+        (5): LeakyReLU(negative_slope=0.2)
+        (6): PixelNormalization(eps = 1e-08)
+      )
+      (4): Sequential(
+        (0): Upsample(scale_factor=2, mode=nearest)
+        (1): WSConv2d(inp = Conv2d[256, 512, 3, 3])
+        (2): LeakyReLU(negative_slope=0.2)
+        (3): PixelNormalization(eps = 1e-08)
+        (4): WSConv2d(inp = Conv2d[256, 256, 3, 3])
+        (5): LeakyReLU(negative_slope=0.2)
+        (6): PixelNormalization(eps = 1e-08)
+      )
+      (5): Sequential(
+        (0): Upsample(scale_factor=2, mode=nearest)
+        (1): WSConv2d(inp = Conv2d[128, 256, 3, 3])
+        (2): LeakyReLU(negative_slope=0.2)
+        (3): PixelNormalization(eps = 1e-08)
+        (4): WSConv2d(inp = Conv2d[128, 128, 3, 3])
+        (5): LeakyReLU(negative_slope=0.2)
+        (6): PixelNormalization(eps = 1e-08)
+      )
+      (6): Sequential(
+        (0): Upsample(scale_factor=2, mode=nearest)
+        (1): WSConv2d(inp = Conv2d[64, 128, 3, 3])
+        (2): LeakyReLU(negative_slope=0.2)
+        (3): PixelNormalization(eps = 1e-08)
+        (4): WSConv2d(inp = Conv2d[64, 64, 3, 3])
+        (5): LeakyReLU(negative_slope=0.2)
+        (6): PixelNormalization(eps = 1e-08)
+      )
+    )
+    (post): ModuleList(
+      (0): Sequential(
+        (0): WSConv2d(inp = Conv2d[3, 512, 1, 1])
+      )
+      (1): Sequential(
+        (0): WSConv2d(inp = Conv2d[3, 512, 1, 1])
+      )
+      (2): Sequential(
+        (0): WSConv2d(inp = Conv2d[3, 512, 1, 1])
+      )
+      (3): Sequential(
+        (0): WSConv2d(inp = Conv2d[3, 512, 1, 1])
+      )
+      (4): Sequential(
+        (0): WSConv2d(inp = Conv2d[3, 256, 1, 1])
+      )
+      (5): Sequential(
+        (0): WSConv2d(inp = Conv2d[3, 128, 1, 1])
+      )
+      (6): Sequential(
+        (0): WSConv2d(inp = Conv2d[3, 64, 1, 1])
+      )
+    )
+  )
+)
+
