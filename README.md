@@ -2,11 +2,12 @@
 This is a PyTorch implementation of the paper [PROGRESSIVE GROWING OF GANS FOR IMPROVED QUALITY, STABILITY, AND VARIATION by Karras et al.](https://arxiv.org/abs/1710.10196) 
 
 ### Contributions by Authors
+* **Progressive Growing:** The primary contribution of the paper is a training methodology for GANs starting with low-resolution images, and then progressively increasing the resolution by adding layers to the networks as shown above
+
 <p align="center">
   <img src="/samples/figure.png">
 </p>
 
-* **Progressive Growing:** The primary contribution of the paper is a training methodology for GANs starting with low-resolution images, and then progressively increasing the resolution by adding layers to the networks as shown above
 * **Mini-batch Discrimination:** To improve variance of generated samples, the authors add a Simplified Minibatch discrimination. Towards the end of the discriminator, batch standard deviation estimates across features and spatial locations are calculated to yeild one feature map that is then concatenated and fed to the next layer 
 * To prevent escalation of signal magnitudes due to an unhealthy competition between discriminator and generator, the authors add
   * **Equalized learning rates:** Addition weight scaling to every layer using normalization constant from He’s initializer (He et al., 2015) and avoiding explicit weight initialization
@@ -15,32 +16,9 @@ This is a PyTorch implementation of the paper [PROGRESSIVE GROWING OF GANS FOR I
 ### Implementation
 * Below are some of the samples generated from this implementation. The people on the left column do not exist, ones on the right are from the celeb dataset
 
-<div class="row">
-  <div class="column">
-    <img src="/samples/4_stab_37500.jpg" alt="Snow" height="800" width="200">
-  </div>
-  <div class="column">
-    <img src="/samples/8_stab_37500.jpg" alt="Snow" height="800" width="200">
-  </div>
-  <div class="column">
-    <img src="/samples/16_stab_37500.jpg" alt="Snow" height="800" width="200">
-  </div>
-  <div class="column">
-    <img src="/samples/32_stab_37500.jpg" alt="Snow" height="800" width="200">
-  </div>
-</div>
-
-<div class="row">
-  <div class="column">
-    <img src="/samples/64_stab_72000.jpg" alt="Snow" height="800" width="200">
-  </div>
-  <div class="column">
-    <img src="/samples/128_stab_98000.jpg" alt="Snow" height="800" width="200">
-  </div>
-  <div class="column">
-    <img src="/samples/256_fade_28000.jpg" alt="Snow" height="800" width="200">
-  </div>
-</div>
+<p align="center">
+  <img src="/samples/compiled.png">
+</p>
 
 * More samples are available in the samples folder and in the log files
 * Training Time ~ 2 days on a single Nvidia GTX 1080Ti (11GB VRAM)

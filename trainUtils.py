@@ -230,7 +230,7 @@ class Trainer:
                     # No fade if this is the first res
                     if i + 1 == 1 and self.stage == 'fade': continue
                     
-                    # No fade if continuing from stab after laoding model  
+                    # No fade if continuing from stab after loading model  
                     if self.startStage == 'stab' and self.res == self.startRes: continue 
                 
                 # for every batch
