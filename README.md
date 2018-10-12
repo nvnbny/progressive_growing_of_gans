@@ -13,29 +13,36 @@ This is a PyTorch implementation of the paper [PROGRESSIVE GROWING OF GANS FOR I
   * **Pixel Normalization:** Normalize the feature vector in each pixel to unit length in the generator after each convolutional layer. They do this using a variant of “local response normalization” (Krizhevsky et al., 2012)
 
 ### Implementation
-* Below are some of the samples generated from this implementation. More samples are available in the samples folder and in the log files
+* Below are some of the samples generated from this implementation. The people on the left column do not exist, ones on the right are from the celeb dataset
 
 <div class="row">
   <div class="column">
-    <img src="/samples/4_stab_37500.jpg" alt="Snow" style="width:100%  height="200" width="50">
+    <img src="/samples/4_stab_37500.jpg" alt="Snow" height="800" width="200">
   </div>
   <div class="column">
-    <img src="/samples/8_stab_37500.jpg" alt="Snow" style="width:100%  height="200" width="50">
+    <img src="/samples/8_stab_37500.jpg" alt="Snow" height="800" width="200">
   </div>
   <div class="column">
-    <img src="/samples/32_stab_37500.jpg" alt="Snow" style="width:100%  height="200" width="50">
+    <img src="/samples/16_stab_37500.jpg" alt="Snow" height="800" width="200">
   </div>
   <div class="column">
-    <img src="/samples/64_stab_72000.jpg" alt="Snow" style="width:100%  height="200" width="50">
-  </div>
-  <div class="column">
-    <img src="/samples/128_stab_98000.jpg" alt="Snow" style="width:100%  height="200" width="50">
-  </div>
-  <div class="column">
-    <img src="/samples/256_fade_28000.jpg" alt="Snow" style="width:100%  height="200" width="50">
+    <img src="/samples/32_stab_37500.jpg" alt="Snow" height="800" width="200">
   </div>
 </div>
 
+<div class="row">
+  <div class="column">
+    <img src="/samples/64_stab_72000.jpg" alt="Snow" height="800" width="200">
+  </div>
+  <div class="column">
+    <img src="/samples/128_stab_98000.jpg" alt="Snow" height="800" width="200">
+  </div>
+  <div class="column">
+    <img src="/samples/256_fade_28000.jpg" alt="Snow" height="800" width="200">
+  </div>
+</div>
+
+* More samples are available in the samples folder and in the log files
 * Training Time ~ 2 days on a single Nvidia GTX 1080Ti (11GB VRAM)
 * The code is well structured, modular and well commented, therefore not creating another doc. Below are the modules that are part of this code
   * **main.py** - main function
